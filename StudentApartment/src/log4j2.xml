@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<Appenders>
+		<Console name="stdout" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d %-5p %C{2} - %m%n" />
+		</Console>
+
+		<File name="fileout" fileName="logs/browe.log">
+			<PatternLayout pattern="%d %-5p [%t] %C{2} (%F:%L) - %m%n" />
+		</File>
+	</Appenders>
+
+
+	<Loggers>
+		<Logger name="com.zd" level="info" >	
+		</Logger>
+
+		<!-- 级别: all info debug error -->
+		<Root level="error">
+			<AppenderRef ref="stdout" />
+			<AppenderRef ref="fileout" />
+		</Root>
+	</Loggers>
+
+
+</Configuration>

@@ -1,0 +1,80 @@
+
+@Author 2F
+	作者语：在使用My97DatePicker之后,发现它是一个很好的日期扩展控件.
+		很多可以自定义完成,随心所欲的控制显示.
+		本人就是经常用来做日期控件,希望分享给大家.能让大家体会到同样的便利.
+
+注意:My97DatePicker.htm文件不能删除.
+
+--  1.解压后添加My97DatePicker文件夹.
+
+--  2.在使用该日期控件的文件中加入JS库(仅这一个文件即可,其他文件会自动引入,请勿删除或改名), 
+	代码如下 <script language="javascript" type="text/javascript" src="datepicker/WdatePicker.js"></script>
+	注:src="datepicker/WdatePicker.js" 请根据你的实际情况改变路径.
+
+--  3.在使用的标签上添加
+	<input ... onclick="WdatePicker()"/>
+	<input ... onclick="WdatePicker({startDate:'%y-%M-%d %h:%m:%s',dateFmt:'yyyy-MM-dd HH:mm:ss',alwaysUseStartDate:true})"/>
+		(可以自定义显示格式)
+	
+	日期格式:
+	y 	将年份表示为最多两位数字。如果年份多于两位数，则结果中仅显示两位低位数。
+	yy 	同上，如果小于两位数，前面补零。
+	yyy 	将年份表示为三位数字。如果少于三位数，前面补零。
+	yyyy 	将年份表示为四位数字。如果少于四位数，前面补零。
+	M 	将月份表示为从 1 至 12 的数字
+	MM 	同上，如果小于两位数，前面补零。
+	MMM 	返回月份的缩写 一月 至 十二月 (英文状态下 Jan to Dec) 。
+	MMMM 	返回月份的全称 一月 至 十二月 (英文状态下 January to December) 。
+	d 	将月中日期表示为从 1 至 31 的数字。
+	dd 	同上，如果小于两位数，前面补零。
+	H 	将小时表示为从 0 至 23 的数字。
+	HH 	同上，如果小于两位数，前面补零。
+	m 	将分钟表示为从 0 至 59 的数字。
+	mm 	同上，如果小于两位数，前面补零。
+	s 	将秒表示为从 0 至 59 的数字。
+	ss 	同上，如果小于两位数，前面补零。
+	w 	返回星期对应的数字 0 (星期天) - 6 (星期六) 。
+	D 	返回星期的缩写 一 至 六 (英文状态下 Sun to Sat) 。
+	DD 	返回星期的全称 星期一 至 星期六 (英文状态下 Sunday to Saturday) 。
+	W 	返回周对应的数字 (1 - 53) 。
+	WW 	同上，如果小于两位数，前面补零 (01 - 53) 。
+
+
+	格式字符串 			值
+	yyyy-MM-dd HH:mm:ss 		2008-03-12 19:20:00
+	yy年M月 			08年3月
+	yyyyMMdd 			20080312
+	yyyy年M年d HH时mm分 		2008年3月12日 19时20分
+	H:m:s 				19:20:0
+	y年 				8年
+	MMMM d, yyyy 			三月 12, 2008
+
+
+--  4.config.js可以配置相应的皮肤
+	(皮肤可以到官网下载.)
+	下载皮肤后
+
+	My97DatePicker目录下有个config.js,里面有段代码:
+	var skinList =
+	[
+		{name:'default', charset:'gb2312'},
+		{name:'whyGreen', charset:'gb2312'},
+		{name:'blue', charset:'gb2312'},
+		{name:'simple', charset:'gb2312'}
+	];
+
+	这就是皮肤列表,每个项有name和charset两个属性.
+	name 表示皮肤的名称,在配置的时候,skin属性只能是配置列表里面已有的项,否则将自动返回第一项
+	charset 表示对应皮肤目录下的css文件:datepicker.css所对应的编码格式
+	
+	皮肤安装说明
+
+	分两步轻松实现:
+	1 将皮肤文件包拷贝到 skin 目录
+	2 打开 config.js 配置皮肤列表
+
+
+--  更详情的使用可以参考http://www.my97.net/dp/demo/index.htm
+--  如果需要更加高级的MyDatePicker 
+	可以进官网查看最近更新..
